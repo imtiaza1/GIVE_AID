@@ -69,4 +69,4 @@ This project is licensed under the **MIT License**. Contributions and modificati
 ---
 
 ## 🖋️ Author
-Developed by **[Imtiaz Ali](https://github.com/your-profile-link)**.
+Developed by **[Imtiaz Ali](https://github.com/imtiaza1)**.
