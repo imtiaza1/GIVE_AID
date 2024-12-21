@@ -1,0 +1,171 @@
+﻿@model donation
+@{
+    ViewData["Title"] = "Donate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="page_breadcrumbs offset_breadcrumbs ds ms parallax section_padding_50">
+    <div class="container with_top_border">
+        <div class="row">
+            <div class="col-sm-6 text-center text-sm-left">
+                <h2>Make a donation</h2>
+            </div>
+            <div class="col-sm-6 text-center text-sm-right">
+                <ol class="breadcrumb darklinks grey">
+                    <li>
+                        <a asp-action="index" asp-controller="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-action="donate" asp-controller="home">Features</a>
+                    </li>
+                    <li class="active">Make a donation</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ls section_padding_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="vertical-item content-overlap">
+                    <div class="item-media">
+                        <img src="~/assets/images/causes_big/04.jpg" alt="" />
+                    </div>
+                    <div class="item-content with_padding_big with_border theme_background fontsize_18">
+                        <i class="fa fa-heart highlight top_icon" aria-hidden="true"></i>
+                        <p class="text-center grey">Thankyou are donating </p>
+                        <h3 class="entry-title black text-center">The Prophet (peace be upon him) said “Sadaqah extinguishes sin as water extinguishes fire” (Hadith, Tirmidhi).</h3>
+                        <form method="post" class="donate-form">
+                            <p>How much would you like to donate?</p>
+                            <div class="flex-content">
+                                <div class="form-group auto-width">
+                                    <div class="contact-form-message">
+                                        <label class="sr-only">Amount</label>
+                                        <!-- Validation for donation amount: numeric and required -->
+                                        <input type="number" asp-for="amount" class="form-control" placeholder="Your Amount" required min="1" title="Please enter a valid donation amount.">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Personal info</p>
+
+                            <div class="row columns_margin_bottom_30">
+                                <div class="col-sm-6">
+                                    <div class="contact-form-name">
+                                        <label for="name" class="sr-only">Your name</label>
+                                        <!-- Validation for name: text and required -->
+                                        <input type="text" asp-for="name" class="form-control" placeholder="Your name" required pattern="[A-Za-z\s]+" title="Please enter a valid name.">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="contact-form-phone">
+                                        <label for="phone" class="sr-only">Your phone</label>
+                                        <!-- Validation for phone number: exactly 11 digits -->
+                                        <input type="text" asp-for="contact" class="form-control" placeholder="Your phone" required pattern="\d{11}" title="Please enter exactly 11 digits for the phone number.">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="contact-form-email">
+                                        <label for="email" class="sr-only">Your email</label>
+                                        <!-- Validation for email: required and proper email format -->
+                                        <input type="email" asp-for="email" class="form-control" placeholder="Your email" required title="Please enter a valid email address.">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="contact-form-message">
+                                        <label for="donationId" class="sr-only">Cause</label>
+                                        <!-- Validation for cause selection: required -->
+                                        <select asp-for="donationId" asp-items="@ViewBag.ep" required title="Please select a cause.">
+                                            <option value="" disabled selected>Select a Cause</option>
+                                            <!-- Dynamically populated causes will be displayed here -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <p>Payment Information</p>
+
+                                <div class="row columns_margin_bottom_30">
+                                    <div class="col-sm-6">
+                                        <div class="contact-form-name">
+                                            <label for="cardname" class="sr-only">Name on Card</label>
+                                            <!-- Validation for card name: text and required -->
+                                            <input type="text" asp-for="CardName" class="form-control" placeholder="Name on Card" required pattern="[A-Za-z\s]+" title="Please enter the name as it appears on the card.">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="contact-form-phone">
+                                            <label for="cardnumber" class="sr-only">Card Number</label>
+                                            <!-- Validation for card number: required, must be digits, max length 19 -->
+                                            <input type="text" asp-for="CardNumber" class="form-control" id="card-number" placeholder="Card Number" required >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="contact-form-phone">
+                                            <label for="cardtype" class="sr-only">Card Type</label>
+                                            <!-- Validation for card type: required -->
+                                            <select asp-for="CardType" class="form-control" required title="Please select a card type.">
+                                                <option value="credit">Credit Card</option>
+                                                <option value="debit">Debit Card</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="contact-form-phone">
+                                        <label for="expirydate" class="sr-only">Expiry Date</label>
+                                        <!-- Validation for expiry date: required, must match MM/YY format -->
+                                        <input type="text" asp-for="ExpiryDate" class="form-control" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/([0-9]{2})" title="Please enter a valid expiry date in the format MM/YY.">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="contact-form-phone">
+                                        <label for="cvv" class="sr-only">CVV</label>
+                                        <!-- Validation for CVV: required, must be 3 or 4 digits -->
+                                        <input type="text" asp-for="CVV" class="form-control" placeholder="CVV" required pattern="\d{3,4}" title="Please enter a valid CVV (3 or 4 digits).">
+                                    </div>
+                                </div>
+
+                                @if (ViewData["ErrorMessage"] != null)
+                                {
+                                    <br />
+                                    <br />
+                                    <div class="alert alert-danger" role="alert">
+                                        @ViewData["ErrorMessage"]
+                                    </div>
+                                }
+
+                                <div class="col-sm-12 text-center bottommargin_0">
+                                    <div class="contact-form-submit topmargin_30">
+                                        <button type="submit" class="theme_button wide_button">Donate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    document.getElementById('card-number').addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, '');
+        let formattedValue = value.match(/.{1,4}/g)?.join(' ') || '';
+        e.target.value = formattedValue;
+    });
+</script>
