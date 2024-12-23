@@ -71,6 +71,10 @@
 3. Use the login credentials or register as a new user to start donating.
 
 ---
+## 🙌 Acknowledgements  
+A special thanks to all contributors, testers, and users who helped make this project a success. Your support is greatly appreciated!
+
+---
 
 ## 📜 License
 This project is licensed under the **MIT License**. Contributions and modifications are welcome!
