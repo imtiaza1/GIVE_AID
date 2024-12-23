@@ -1,19 +1,33 @@
-# 🤝 Give Aid - Donation System (Code First Approach)
+# 🤝 Give Aid - Donation System 
 
 ## 📝 Description
-**Give Aid** is a donation management system developed using the **Code First** approach in **.NET MVC**. This project, created as part of my studies at **Aptech**, enables users to contribute to various causes securely and efficiently. The system leverages **C#** and **Entity Framework** to dynamically create the database based on the code structure.
+**Give Aid** is a donation management system developed using the **Code First** approach in **.NET MVC**. This project enables users to contribute to various causes securely and efficiently. The system leverages **C#** and **Entity Framework** to dynamically create the database based on the code structure.
 
-Key Features:  
-- **User Login**: Secure user authentication.  
-- **Make Donations**: Seamless contribution process for donors.  
-- **Specific Donations**: Allocate donations to specific causes and track them effectively.
+## Key Features
+- **User Authentication**: Secure login and registration process for donors and administrators.  
+- **Make Donations**: Easy and seamless process for making one-time or recurring donations.  
+- **Specific Donations**: Allocate funds to specific causes or campaigns, with real-time tracking of donation progress.  
+- **Donor Management**: Allow users to manage their personal information, track donation history, and view receipts.  
+- **Campaign Management**: Administrators can create and manage various donation campaigns for different causes.  
+- **Donation Goals**: Set donation goals for campaigns, and visually track progress toward reaching these goals.  
+- **Multiple Payment Options**: Accept donations through multiple payment methods such as credit/debit cards, PayPal, or bank transfers.  
+- **Donor Dashboard**: Personalized dashboard for users to view their donation history, upcoming payments, and upcoming campaigns.  
+- **Cause Information**: Detailed information about each cause or campaign to help donors make informed decisions.  
+- **Admin Dashboard**: Admin panel to manage users, donations, campaigns, and track real-time statistics.
 
 ---
 
 ## 🚀 Features
-✨ **Code First Approach**: Automatically generates the database from the application's models.  
-🔒 **Secure Login**: Robust authentication for users.  
-🎁 **Donation Tracking**: View and manage donations for specific purposes.
+✨ **Code First Approach**: Automatically generates the database schema based on the application’s models, making it easier to scale and maintain.  
+🔒 **Secure Login**: Robust authentication and role-based access control for users and administrators.  
+🎁 **Donation Tracking**: Track specific donations and view detailed reports on donations made toward each campaign.  
+📊 **Campaign Analytics**: View detailed analytics and progress reports for ongoing campaigns to assess effectiveness and user engagement.  
+📅 **Recurring Donations**: Set up recurring donations, allowing donors to contribute on a regular basis (e.g., monthly, quarterly).  
+💬 **Donor Feedback**: Donors can leave feedback and interact with the campaigns or causes they are supporting.  
+📈 **Donation Reports**: Generate detailed reports for donors and administrators, including transaction history, donation summaries, and tax-related information.  
+📱 **Responsive Design**: Optimized for all devices, ensuring a seamless donation experience on desktops, tablets, and mobile devices.  
+
+
 
 ---
 
@@ -58,15 +72,7 @@ Key Features:
 
 ---
 
-## 🙌 Acknowledgements
-Special thanks to **Aptech** for providing the platform and guidance to complete this project successfully.
-
----
-
 ## 📜 License
 This project is licensed under the **MIT License**. Contributions and modifications are welcome!
 
 ---
-
-## 🖋️ Author
-Developed by **[Imtiaz Ali](https://github.com/imtiaza1)**.
